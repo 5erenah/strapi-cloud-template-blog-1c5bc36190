@@ -4,6 +4,12 @@ module.exports = ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
+  auth: {
+    secret: env('ADMIN_JWT_SECRET'),
+  },
+  apiToken: {
+    salt: env('API_TOKEN_SALT'),
+  },
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
